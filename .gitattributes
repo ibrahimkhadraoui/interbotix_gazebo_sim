@@ -1,0 +1,6 @@
+gazebo_models/**/*.obj filter=lfs diff=lfs merge=lfs -text
+gazebo_models/**/*.dae filter=lfs diff=lfs merge=lfs -text
+gazebo_models/**/*.stl filter=lfs diff=lfs merge=lfs -text
+gazebo_models/**/*.png filter=lfs diff=lfs merge=lfs -text
+gazebo_models/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+gazebo_models/**/*.pbtxt filter=lfs diff=lfs merge=lfs -text
