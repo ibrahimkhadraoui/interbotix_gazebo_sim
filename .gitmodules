@@ -1,0 +1,4 @@
+[submodule "interbotix_ros_manipulators"]
+	path = interbotix_ros_manipulators
+	url = https://github.com/ibrahimkhadraoui/interbotix_ros_manipulators.git
+	branch = noetic
