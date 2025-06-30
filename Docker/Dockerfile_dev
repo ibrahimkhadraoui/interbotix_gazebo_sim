@@ -12,14 +12,12 @@ RUN apt-get install -y git-all libignition-math4-dev curl figlet net-tools
 
 # Install interbotix dependencies
 WORKDIR /home
-RUN curl -sSL 'https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/rpi4/xsarm_rpi4_install.sh' > xsarm_rpi4_install.sh
+COPY xsarm_rpi4_install.sh .
 RUN chmod +x xsarm_rpi4_install.sh
 RUN ./xsarm_rpi4_install.sh -d noetic -p /home/interbotix_ws -n
 RUN bash -c "source /opt/ros/$ROS_DISTRO/setup.bash && \
     source /home/interbotix_ws/devel/setup.bash"
+RUN echo "source /home/interbotix_ws/devel/setup.bash" >> ~/.bashrc
 
 # Expose the ports for the ROS master
 EXPOSE 11311
-
-ENTRYPOINT [ "/ros_entrypoint.sh" ]
-CMD [ "/bin/bash" ]
