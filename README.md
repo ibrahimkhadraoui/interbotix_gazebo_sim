@@ -1,0 +1,1 @@
+rocker --nvidia auto --port 11311:11311 --name cleansim-test --volume interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_gazebo/models:/root/.gazebo/models --volume interbotix_ros_manipulators:/home/interbotix_ws/src/interbotix_ros_manipulators --privileged --x11 --mode interactive cleansim:dev
