@@ -17,6 +17,10 @@ RUN chmod +x xsarm_rpi4_install.sh
 RUN ./xsarm_rpi4_install.sh -d noetic -p /home/interbotix_ws -n
 RUN bash -c "source /opt/ros/$ROS_DISTRO/setup.bash && \
     source /home/interbotix_ws/devel/setup.bash"
+WORKDIR /home/interbotix_ws/src
+RUN bash -c "git clone https://github.com/pal-robotics/gazebo_ros_link_attacher.git"
+RUN bash -c "catkin_make"
+RUN bash -c "source /home/interbotix_ws/devel/setup.bash"
 RUN echo "source /home/interbotix_ws/devel/setup.bash" >> ~/.bashrc
 
 # Expose the ports for the ROS master
